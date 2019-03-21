@@ -36,10 +36,10 @@ fi
 docker run -it \
     --rm \
     -e DISPLAY=${DISPLAY} \
-    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -v ~/.Xauthority:/home/wine/.Xauthority \
     -v winehome${branch}:/home/wine \
-    -v /home/$USER/winedata:/home/wine/data \
+    -v ~/flowgorithm_data:/home/wine/data \
     --net="host" \
     --name="wine${branch}" \
-    docker-wine${branch} $*
+    palzer/flowgorithm-docker${branch} $*
     #--volume="$HOME/.Xauthority:/root/.Xauthority:ro" \
